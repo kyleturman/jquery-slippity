@@ -31,6 +31,7 @@ $("#some-slider").slippity();
 #### CSS
 ```css
 .slider {
+	overflow: visible !important; /* Have to add this due to jQuery adding overflow:hidden */
 	position: relative;
 }
 
