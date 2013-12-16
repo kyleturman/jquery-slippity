@@ -6,12 +6,12 @@ A lightweight and simple jQuery slider/carousel plugin built with developers in 
 
 #### Javascript
 ```js
-$(".hero").slippity();
+$("#some-slider").slippity();
 ```
 
 #### HTML
 ```html
-<div class="slider">
+<div id="some-slider" class="slider">
 	<a class="left arrow"></a><a class="right arrow"></a>
 
 	<div class="slide active">
