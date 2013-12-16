@@ -41,11 +41,8 @@
 				if (settings.dynamicHeight) {
 					$slider.css({height: $slides.eq(current).height() });
 					
-					$slider.on("load",function(){
-						$slider.css({height: $slides.eq(current).height() });
-					});
-					
-					$(window).on("resize", function(){
+					// Make sure the height is set.
+					$(window).on("load resize", function(){
 						$slider.css({height: $slides.eq(current).height() });
 					});
 				}
