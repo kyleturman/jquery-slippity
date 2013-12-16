@@ -56,7 +56,6 @@
 				// Set up page indicator dot click events.
 				$dots.on("click",function(e){
 					e.preventDefault();
-
 					slideTo( $(e.currentTarget).index() );
 				});
 				
@@ -93,16 +92,11 @@
 			function slideTo(index) {
 				if (index != current && !animating) {
 					
-					// Set animating so we don't get any interfere ourselves.
+					// Set animating so we don't interfere with ourselves.
 					animating = true;
 					
 					// Determine if we're going right or left with the slidingness.
-					var rightleft = "";
-					if (index > current) {
-						rightleft = "left";
-					} else {
-						rightleft = "right";
-					}
+					var rightleft = (index > current ? "left" : "right");
 					
 					// Set current index.
 					current = index;
@@ -123,11 +117,7 @@
 					});
 					
 					// Switch the right / left for animating in.
-					if (rightleft == "right") {
-						rightleft = "left";
-					} else {
-						rightleft = "right";
-					}
+					rightleft = (rightleft == "right" ? "left" : "right");
 					
 					// Create attributes for sliding animation in.
 					var initAttrsIn = {display:"block"},
