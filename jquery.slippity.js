@@ -7,7 +7,7 @@
 	var $ = jQuery;
 	
 	$.fn.extend({
-		simpleSlider: function(options) {
+		slippity: function(options) {
 			
 			settings = {
 				arrowClass: ".arrow",

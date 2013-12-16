@@ -22,7 +22,7 @@ $("#some-slider").slippity();
 		<!-- Some Content -->
 	</div>
 
-	<div class="slide active">
+	<div class="slide">
 		<!-- Some Content -->
 	</div>
 </div>
