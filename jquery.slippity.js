@@ -2,15 +2,19 @@
 * http://slippity.com
 * Copyright (c) 2013 Kyle Turman; Licensed MIT */
 
-;(function($,window,undefined) {
+;(function() {
+	
+	var $ = jQuery;
 	
 	$.fn.extend({
-		slippity: function(options) {
+		simpleSlider: function(options) {
 			
 			settings = {
 				arrowClass: ".arrow",
 				slideClass: ".slide",
-				animationTime: 500
+				animationTime: 500,
+				start: function(){},
+				end: function(){}
 			};
 			settings = $.extend(settings, options);
 			
@@ -87,7 +91,8 @@
 			}
 			
 			function slideTo(index) {
-				if (index != current && !animating) {				
+				if (index != current && !animating) {
+					
 					// Set animating so we don't get any interfere ourselves.
 					animating = true;
 					
@@ -98,6 +103,12 @@
 					} else {
 						rightleft = "right";
 					}
+					
+					// Set current index.
+					current = index;
+					
+					// Call start callback.
+					settings.start(index);
 					
 					// Create attributes for sliding animation out.
 					var initAttrsOut = {display:"block",opacity:1},
@@ -129,10 +140,10 @@
 					$slides.eq(index).css(initAttrsIn).animate(endAttrsIn, settings.animationTime, function(){
 						$(this).addClass("active").removeAttr("style");
 						animating = false;
+						settings.end(index);
 					});
 					
-					// Set current index.
-					current = index;
+					// Update page indicator dot.
 					$dots.removeClass("active").eq( current ).addClass("active");
 				}
 			}

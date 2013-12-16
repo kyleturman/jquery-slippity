@@ -79,3 +79,13 @@ $(".hero").slippity();
 					opacity: 1;
 				}
 ```
+
+## Options
+
+| Name | Description | Type | Default |
+|------|-------------|------|---------|
+| `arrowClass` | The class name of the next/ previous slider arrow buttons.  | string | ".arrow" |
+| `sliderClass` | The class name of the slider container. | string | ".slider" |
+| `animationTime` | The time it takes for the slider to animate in/out from the left or right. | Integer or String | 500 |
+| `start` | Callback for when the slider starts sliding. | Function | none |
+| `end` | Callback for when the slider is finished animating/sliding | Function | none |
