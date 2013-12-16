@@ -1,6 +1,6 @@
 # Slippity
 
-A lightweight and simple jQuery slider/carousel plugin build with developers in mind and made to be extended.
+A lightweight and simple jQuery slider/carousel plugin built with developers in mind and made to be extended.
 
 ## Setup
 
