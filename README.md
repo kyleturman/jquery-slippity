@@ -67,7 +67,7 @@ $("#some-slider").slippity();
 		width: 100%;
 	}
 			.slider .dots a {
-				background: #FFF;
+				background: #000;
 				border-radius: 4em;
 				display: inline-block;
 				margin: 0 10px;
@@ -84,8 +84,9 @@ $("#some-slider").slippity();
 
 | Name | Description | Type | Default |
 |------|-------------|------|---------|
-| `arrowClass` | The class name of the next/ previous slider arrow buttons.  | string | ".arrow" |
-| `slideClass` | The class name of the actual slides in the slider container. | string | ".slide" |
+| `arrowClass` | The class name of the next/ previous slider arrow buttons.  | String | ".arrow" |
+| `slideClass` | The class name of the actual slides in the slider container. | String | ".slide" |
+| `dynamicHeight` | Set whether or not the plugin will adjust the height of slider container based on what's inside. | Boolean | true |
 | `animationTime` | The time it takes for the slider to animate in/out from the left or right. | Integer or String | 500 |
 | `start` | Callback for when the slider starts sliding. | Function | none |
 | `end` | Callback for when the slider is finished animating/sliding | Function | none |

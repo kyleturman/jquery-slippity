@@ -12,6 +12,7 @@
 			settings = {
 				arrowClass: ".arrow",
 				slideClass: ".slide",
+				dynamicHeight: true,
 				animationTime: 500,
 				start: function(){},
 				end: function(){}
@@ -37,7 +38,12 @@
 				current = $slides.filter(".active").index(settings.slideClass)
 			
 				// Set initial slider height based on what's inside.
-				$slider.css({height: $slides.eq(current).height() })
+				if (settings.dynamicHeight) {
+					$slider.css({height: $slides.eq(current).height() });
+					$slider.on("load",function(){
+						$slider.css({height: $slides.eq(current).height() });
+					});
+				}
 
 
 				/**** PAGE INDICATOR DOTS ****/
@@ -132,6 +138,11 @@
 						animating = false;
 						settings.end(index);
 					});
+					
+					// Match height of next slide
+					if (settings.dynamicHeight) {
+						$slider.animate({height: $slides.eq(current).height() }, settings.animationTime);
+					}
 					
 					// Update page indicator dot.
 					$dots.removeClass("active").eq( current ).addClass("active");
